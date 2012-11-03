@@ -11,7 +11,16 @@ class Codebase implements NotifierInterface
     /**
      * @var string
      */
-    private $_apiKey;
+    protected $_apiKey;
+
+    /**
+     * @var array
+     */
+    protected $_airbrake_config = array(
+        'apiEndPoint' => 'https://exceptions.codebasehq.com/notifier_api/v2/notices',
+        'timeout' => 30,
+        'environmentName' => 'production'
+    );
 
     /**
      * @param string $apiKey
@@ -36,11 +45,11 @@ class Codebase implements NotifierInterface
         return $client->notifyOnError($message);
     }
 
+    /**
+     * @return array
+     */
     protected function _getConfigOptions()
     {
-        return array(
-            'apiEndPoint' => 'https://exceptions.codebasehq.com/notifier_api/v2/notices',
-            'timeout' => 30
-        );
+        return $this->_airbrake_config;
     }
 }
