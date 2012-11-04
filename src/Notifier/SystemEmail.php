@@ -7,7 +7,7 @@ require_once(realpath(__DIR__).'/NotifierInterface.php');
 class SystemEmail implements NotifierInterface
 {
     protected $_email_config = array(
-        'recipients' => array('jesse@getbunch.com'),
+        'recipients' => array('test@yourdomain.com'),
         'subject' => 'Testing EEException SystemEmail',
         'message' => ''
     );
