@@ -6,7 +6,7 @@ require_once(realpath(__DIR__).'/NotifierInterface.php');
 require_once(realpath(__DIR__).'/../vendor/php-airbrake/src/Airbrake/Client.php');
 require_once(realpath(__DIR__).'/../vendor/php-airbrake/src/Airbrake/Configuration.php');
 
-class Codebase implements NotifierInterface
+class Airbrake implements NotifierInterface
 {
     /**
      * @var string
@@ -17,22 +17,29 @@ class Codebase implements NotifierInterface
      * @var array
      */
     protected $_airbrake_config = array(
-        'apiEndPoint' => 'https://exceptions.codebasehq.com/notifier_api/v2/notices',
-        'timeout' => 30,
-        'environmentName' => 'production'
+        'apiEndPoint' => '',
+        'apiKey' => '',
+        'environmentName' => '',
+        'component' => '',
+        'action' => '',
+        'url' => '',
+        'timeout' => 30
     );
 
     /**
-     * @param string $apiKey
+     * @param array $notifier_config
      */
-    function __construct($apiKey)
+    function __construct(array $notifier_config)
     {
-        $this->_apiKey = $apiKey;
+        $this->_apiKey = $notifier_config['apiKey'];
+        unset($notifier_config['apiKey']);
+
+        $this->_airbrake_config = array_merge($this->_airbrake_config, $notifier_config);
     }
 
     /**
-     * @param $message
-     * @return string
+     * @param string $message
+     * @return bool
      */
     public function SendErrorString($message)
     {

@@ -2,7 +2,7 @@
 
 namespace EEException\Test\Interactor;
 
-require_once(realpath(__DIR__) . '/../../src/Notifier/Codebase.php');
+require_once(realpath(__DIR__) . '/../../src/Notifier/Airbrake.php');
 require_once(realpath(__DIR__) . '/../../src/UseCases/SendErrorString.php');
 
 class TestSendErrorMessage extends \PHPUnit_Framework_TestCase
@@ -55,7 +55,7 @@ class TestSendErrorMessage extends \PHPUnit_Framework_TestCase
 
     protected function _getNotifierMock()
     {
-        $notifier = $this->getMock('EEException\Notifier\Codebase', array(), array('FAKE API KEY'));
+        $notifier = $this->getMock('EEException\Notifier\Airbrake', array(), array(array('apiKey' => 'FAKE')));
 
         $notifier->expects($this->any())
             ->method('SendErrorString')
