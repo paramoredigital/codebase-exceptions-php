@@ -1,0 +1,21 @@
+{
+    "name": "paramoredigital/codebase-exceptions-php",
+    "type": "library",
+    "description": "Framework-independent library for PHP 5.3 that notifies Codebase or Airbrake.io of exceptions in your application.",
+    "keywords": ["airbrake", "exceptions", "errors", "logging", "codebase", "codebasehq"],
+    "homepage": "https://github.com/paramoredigital/codebase-exceptions-php",
+    "authors": [{
+        "name": "Jesse Bunch",
+        "homepage": "http://getbunch.com"
+    },
+    {
+    	"name": "Paramore | The digital agency",
+    	"homepage": "http://paramoredigital.com"
+    }
+    ],
+
+    "require": {
+        "php": ">=5.3.1",
+        "nodrew/php-airbrake": "dev-master"
+    }
+}
