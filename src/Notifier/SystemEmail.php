@@ -1,6 +1,6 @@
 <?php
 
-namespace EEException\Notifier;
+namespace CodebaseNotifier\Notifier;
 
 require_once(realpath(__DIR__).'/NotifierInterface.php');
 
@@ -8,7 +8,7 @@ class SystemEmail implements NotifierInterface
 {
     protected $_email_config = array(
         'recipients' => array('test@yourdomain.com'),
-        'subject' => 'Testing EEException SystemEmail',
+        'subject' => 'Testing CodebaseNotifier SystemEmail',
         'message' => ''
     );
 

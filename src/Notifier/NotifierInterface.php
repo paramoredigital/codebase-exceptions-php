@@ -1,6 +1,6 @@
 <?php
 
-namespace EEException\Notifier;
+namespace CodebaseNotifier\Notifier;
 
 interface NotifierInterface
 {

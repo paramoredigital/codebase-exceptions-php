@@ -1,6 +1,6 @@
 <?php
 
-namespace EEException\Notifier;
+namespace CodebaseNotifier\Notifier;
 
 require_once(realpath(__DIR__).'/NotifierInterface.php');
 require_once(realpath(__DIR__).'/../vendor/php-airbrake/src/Airbrake/Client.php');

@@ -1,20 +1,20 @@
 <?php
 
-namespace EEException\UseCases;
+namespace CodebaseNotifier\UseCases;
 
 require_once(realpath(__DIR__) . '/../Notifier/Airbrake.php');
 
 class SendErrorString
 {
     /**
-     * @var \EEException\Notifier\NotifierInterface
+     * @var \CodebaseNotifier\Notifier\NotifierInterface
      */
     private $_notifier;
 
     /**
-     * @param \EEException\Notifier\NotifierInterface $_notifier
+     * @param \CodebaseNotifier\Notifier\NotifierInterface $_notifier
      */
-    function __construct(\EEException\Notifier\NotifierInterface $_notifier)
+    function __construct(\CodebaseNotifier\Notifier\NotifierInterface $_notifier)
     {
         $this->_notifier = $_notifier;
     }
