@@ -16,6 +16,6 @@
 
     "require": {
         "php": ">=5.3.1",
-        "nodrew/php-airbrake": "dev-master"
+        "nodrew/php-airbrake": "1.1.*"
     }
 }
